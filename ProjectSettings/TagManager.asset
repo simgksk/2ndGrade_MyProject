@@ -8,6 +8,8 @@ TagManager:
   - Dealer
   - Healer
   - Tanker
+  - TractorLine
+  - Dino
   layers:
   - Default
   - TransparentFX
