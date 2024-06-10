@@ -23,8 +23,8 @@ public class FeedSpawner : MonoBehaviour
 
             if (childTransform.childCount == 0)
             {
-                GameObject spawnedDino = Instantiate(feedPrefab, childTransform.position, transform.rotation);
-                spawnedDino.transform.SetParent(childTransform);
+                GameObject spawnedFeed = Instantiate(feedPrefab, childTransform.position, transform.rotation);
+                spawnedFeed.transform.SetParent(childTransform);
             }
         }
     }

@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 6247223360361787583}
   - component: {fileID: 334975724869695353}
   - component: {fileID: 7172032067129200364}
+  - component: {fileID: 1006792078479315403}
   m_Layer: 0
   m_Name: Chicken_Dealer
   m_TagString: Dealer
@@ -202,6 +203,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2327378757382241995}
+  - {fileID: 8441415333791002628}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &334975724869695353
@@ -250,10 +252,25 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.2789322
+  m_Height: 0.76307476
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.01930517, y: 0.38445243, z: 0.17607859}
+--- !u!114 &1006792078479315403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306615788120119874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9436bef24d020842824b3230325025b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4000299145594015373, guid: 4b1a07203a7e83f4ea6d194fb0dab574,
+    type: 3}
+  bulletPos: {fileID: 8441415333791002628}
 --- !u!1 &578502809395583860
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +586,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &950351795935752886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8441415333791002628}
+  m_Layer: 0
+  m_Name: BulletPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8441415333791002628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950351795935752886}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.44, z: 0.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6247223360361787583}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330102105454025295
 GameObject:
   m_ObjectHideFlags: 0
