@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8909412009207759126}
   - component: {fileID: 3018177834649506622}
   - component: {fileID: 4070801521679869762}
-  - component: {fileID: 4902638279909452329}
+  - component: {fileID: -9156285496896081865}
   m_Layer: 0
   m_Name: floor_Yellow
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4902638279909452329
+--- !u!65 &-9156285496896081865
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
