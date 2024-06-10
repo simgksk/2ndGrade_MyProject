@@ -22,7 +22,6 @@ public class Dinosaur : MonoBehaviour
     {
         while (true)
         {
-
             float moveDuration = 1f;
             float elapsedTime = 0f;
 
@@ -33,6 +32,14 @@ public class Dinosaur : MonoBehaviour
                 yield return null;
             }
             yield return new WaitForSeconds(.5f);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Tractor"))
+        {
+            Destroy(gameObject, .1f);
         }
     }
 }

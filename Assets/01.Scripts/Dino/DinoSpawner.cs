@@ -20,14 +20,19 @@ public class DinoSpawner : MonoBehaviour
     {
         while (true)
         {
-            float rdSpawnTime = Random.Range(2f, 5f);
+            float rdSpawnTime = Random.Range(5f, 10f);
             yield return new WaitForSeconds(rdSpawnTime);
 
             int rdIndex = Random.Range(0, dinoPrefabs.Length);
             GameObject selectedPrefab = dinoPrefabs[rdIndex];
 
             Transform childTransform = transform.GetChild(Random.Range(0, transform.childCount));
-            Instantiate(selectedPrefab, childTransform.position, Quaternion.identity, transform);
+
+            if (childTransform.childCount == 0)
+            {
+                GameObject spawnedDino = Instantiate(selectedPrefab, childTransform.position, Quaternion.Euler(0, -90, 0));
+                spawnedDino.transform.SetParent(childTransform);
+            }
         }
     }
     

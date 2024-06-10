@@ -10,6 +10,7 @@ TagManager:
   - Tanker
   - TractorLine
   - Dino
+  - Tractor
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5769119952683015342}
   m_Layer: 0
   m_Name: tractor
-  m_TagString: Untagged
+  m_TagString: Tractor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,8 +71,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.94571, y: 4.5212536, z: 6.471903}
-  m_Center: {x: 0.8489585, y: 1.7606277, z: -0.1700449}
+  m_Size: {x: 4.94571, y: 4.5212536, z: 8.555479}
+  m_Center: {x: 0.8489585, y: 1.7606277, z: 0.8717432}
 --- !u!54 &-5769119952683015342
 Rigidbody:
   m_ObjectHideFlags: 0
