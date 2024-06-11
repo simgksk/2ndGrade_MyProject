@@ -7,6 +7,7 @@ public class ChickenFeed : MonoBehaviour
 {
     float fallSpeed = 1f;
     bool isFloor = false;
+    int feedCnt = 25;
     void Start()
     {
         
@@ -28,6 +29,7 @@ public class ChickenFeed : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        GameManager.instance.AddFeedCnt(feedCnt);
         Destroy(gameObject);
     }
 }
