@@ -41,5 +41,9 @@ public class Dinosaur : MonoBehaviour
         {
             Destroy(gameObject, .1f);
         }
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

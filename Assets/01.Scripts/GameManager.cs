@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     [SerializeField] TextMeshProUGUI feedCntTxt;
-    int feedCnt = 50;
+    int feedCnt = 100;
 
     private void Awake()
     {

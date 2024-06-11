@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    float bulletSpeed = 5f;
+    float bulletSpeed = 3f;
     void Start()
     {
         
@@ -13,5 +13,17 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.right * bulletSpeed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Dino"))
+        {
+            Destroy(gameObject);
+        }
+        if(other.gameObject.CompareTag("TractorLine"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

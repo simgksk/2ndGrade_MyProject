@@ -12,6 +12,7 @@ TagManager:
   - Dino
   - Tractor
   - Floor
+  - Bullet
   layers:
   - Default
   - TransparentFX

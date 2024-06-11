@@ -223,12 +223,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3065779072488602816}
-  - component: {fileID: 6518946843600939772}
-  - component: {fileID: 6341048690293428098}
   - component: {fileID: -1014211788766523986}
+  - component: {fileID: -5870284949497966579}
+  - component: {fileID: 6505000926600256911}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,30 +251,19 @@ Transform:
   - {fileID: 5043341004068158873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &6518946843600939772
-CapsuleCollider:
+--- !u!114 &-1014211788766523986
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4000299145594015373}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.053664148
-  m_Height: 0.107328296
-  m_Direction: 1
-  m_Center: {x: 0.007055491, y: 0.29181767, z: -0.15039998}
---- !u!54 &6341048690293428098
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5989af13b5bbd4840b0efb7fe24fbd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &-5870284949497966579
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,20 +288,29 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 14
   m_CollisionDetection: 0
---- !u!114 &-1014211788766523986
-MonoBehaviour:
+--- !u!65 &6505000926600256911
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4000299145594015373}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5989af13b5bbd4840b0efb7fe24fbd02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Size: {x: 0.09837206, y: 0.09625237, z: 0.09780997}
+  m_Center: {x: -0.0020099333, y: 0.28301126, z: -0.14258173}
 --- !u!1 &5900136798236098408
 GameObject:
   m_ObjectHideFlags: 0
