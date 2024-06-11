@@ -8,13 +8,23 @@ public class Dealer : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletPos;
+    [SerializeField] GameObject healthBarPrefab;
+    GameObject healthBar;
+    HealthBar healthBarScript;
+    float maxHealth = 100f;
+    float currentHealth;
+
     void Start()
     {
+        currentHealth = maxHealth;
+        healthBar = Instantiate(healthBarPrefab, transform.position + Vector3.up * 2, Quaternion.identity, transform);
+        healthBarScript = healthBar.GetComponent<HealthBar>();
+        healthBarScript.SetMaxHealth(maxHealth);
         StartCoroutine(BulletSpawn());
     }
     void Update()
     {
-        
+        healthBar.transform.position = transform.position + Vector3.up * 2;
     }
     IEnumerator BulletSpawn()
     {
@@ -23,16 +33,9 @@ public class Dealer : MonoBehaviour
             float spawnTime = 5f;
             yield return new WaitForSeconds(spawnTime);
 
-            /*GameObject spawnedBullet = Instantiate(bulletPrefab, bulletPos.position, bulletPos.rotation);
-            spawnedBullet.transform.SetParent(bulletPos);*/
-
-            /*Debug.Log("Bullet Position: " + bulletPos.position);
-            Debug.Log("Bullet Rotation: " + bulletPos.rotation.eulerAngles);*/
-
-            // 총알을 bulletPos 위치에 생성합니다.
             Quaternion bulletRotation = Quaternion.Euler(0, 90, 0);
             GameObject spawnedBullet = Instantiate(bulletPrefab, bulletPos.position, bulletRotation);
-            //Debug.Log("Spawned Bullet Position: " + spawnedBullet.transform.position);
         }
     }
+
 }

@@ -271,6 +271,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4000299145594015373, guid: 4b1a07203a7e83f4ea6d194fb0dab574,
     type: 3}
   bulletPos: {fileID: 8441415333791002628}
+  healthBarPrefab: {fileID: 1825481033360878, guid: 5eefba205a58c8c4a937c97b87c185a3,
+    type: 3}
 --- !u!1 &578502809395583860
 GameObject:
   m_ObjectHideFlags: 0
