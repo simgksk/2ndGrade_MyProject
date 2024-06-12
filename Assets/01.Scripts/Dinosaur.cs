@@ -45,5 +45,9 @@ public class Dinosaur : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (other.gameObject.CompareTag("Barn"))
+        {
+            GameManager.instance.ShowGameOverPanel();
+        }
     }
 }

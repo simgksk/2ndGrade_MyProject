@@ -92,10 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7072073930730835037}
-  - component: {fileID: -198087673156590462}
   - component: {fileID: -6912611820788697122}
   - component: {fileID: -5617690581369897377}
   - component: {fileID: -908195936938211202}
+  - component: {fileID: 1973805185711039198}
   m_Layer: 0
   m_Name: mofletitos
   m_TagString: Dino
@@ -119,18 +119,6 @@ Transform:
   - {fileID: 7835416196001822122}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-198087673156590462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3597630545634646944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e726776a590ad248b0c53696d691f86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &-6912611820788697122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,3 +179,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e726776a590ad248b0c53696d691f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1973805185711039198
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597630545634646944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e56526b7fd96f9448a109201658d308, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

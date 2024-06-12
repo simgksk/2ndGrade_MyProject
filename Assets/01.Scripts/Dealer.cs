@@ -16,15 +16,16 @@ public class Dealer : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        /*currentHealth = maxHealth;
         healthBar = Instantiate(healthBarPrefab, transform.position + Vector3.up * 2, Quaternion.identity, transform);
         healthBarScript = healthBar.GetComponent<HealthBar>();
-        healthBarScript.SetMaxHealth(maxHealth);
+        healthBarScript.SetMaxHealth(maxHealth);*/
+
         StartCoroutine(BulletSpawn());
     }
     void Update()
     {
-        healthBar.transform.position = transform.position + Vector3.up * 2;
+        //healthBar.transform.position = transform.position + Vector3.up * 2;
     }
     IEnumerator BulletSpawn()
     {
@@ -35,6 +36,7 @@ public class Dealer : MonoBehaviour
 
             Quaternion bulletRotation = Quaternion.Euler(0, 90, 0);
             GameObject spawnedBullet = Instantiate(bulletPrefab, bulletPos.position, bulletRotation);
+            spawnedBullet.transform.SetParent(bulletPos);
         }
     }
 
