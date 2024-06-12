@@ -1,23 +1,60 @@
 using System.Collections;
 using UnityEngine;
 
+public enum DinoType
+{
+    mofletitos,
+    stegosaurus
+}
+
 public class Dinosaur : MonoBehaviour
 {
     float moveSpeed = .5f;
-
-    private void Awake()
-    {
-    }
+    Animator anim;
+    Coroutine moveCoroutine;
+    [SerializeField] DinoType dinoType;
 
     void Start()
     {
-        StartCoroutine(DinoMove());
+        anim = GetComponent<Animator>();
+        moveCoroutine = StartCoroutine(DinoMove());
     }
 
     void Update()
     {
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Tractor"))
+        {
+            if (moveCoroutine != null)
+            {
+                StopCoroutine(moveCoroutine);
+            }
+
+            switch (dinoType)
+            {
+                case DinoType.mofletitos:
+                    anim.SetBool("isDie", true);
+                    Destroy(gameObject, 1.5f);
+                    break;
+                case DinoType.stegosaurus:
+                    anim.SetBool("isDie1", true);
+                    Destroy(gameObject, 1.5f);
+                    break;
+                
+            }
+        }
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
+        if (other.gameObject.CompareTag("Barn"))
+        {
+            GameManager.instance.ShowGameOverPanel();
+        }
+    }
     IEnumerator DinoMove()
     {
         while (true)
@@ -32,22 +69,6 @@ public class Dinosaur : MonoBehaviour
                 yield return null;
             }
             yield return new WaitForSeconds(.5f);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Tractor"))
-        {
-            Destroy(gameObject, .1f);
-        }
-        if (other.gameObject.CompareTag("Bullet"))
-        {
-            Destroy(gameObject);
-        }
-        if (other.gameObject.CompareTag("Barn"))
-        {
-            GameManager.instance.ShowGameOverPanel();
         }
     }
 }

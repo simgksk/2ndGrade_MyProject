@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: -494643819688532284}
   - component: {fileID: 5609715699740474063}
   - component: {fileID: -5403910455753280076}
+  - component: {fileID: 2273840699124873878}
   m_Layer: 0
   m_Name: stegosaurus
   m_TagString: Dino
@@ -137,8 +138,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 66.63487, y: 232.53673, z: 225.90497}
-  m_Center: {x: -0.049365893, y: 100.70063, z: -25.02404}
+  m_Size: {x: 66.63487, y: 232.53673, z: 273.09265}
+  m_Center: {x: -0.049365893, y: 100.70063, z: -1.4301671}
 --- !u!54 &5609715699740474063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -178,3 +179,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e726776a590ad248b0c53696d691f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dinoType: 1
+--- !u!95 &2273840699124873878
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5370476360481279603}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e91757ea6c65726429c8dbd4a97611ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
