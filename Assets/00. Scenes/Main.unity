@@ -1163,6 +1163,12 @@ MonoBehaviour:
   dealer_border: {fileID: 359697328}
   healer_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
+  dealerPrefab: {fileID: 306615788120119874, guid: 8f0ea853b712d8d46a6210d1116d02e2,
+    type: 3}
+  healerPrefab: {fileID: 5384648026454396403, guid: eaf433cb511e0024e8d5df27f884381b,
+    type: 3}
+  tankerPrefab: {fileID: 752020975371630323, guid: 3ad5a457e43f37c41ae9949cd639e0e8,
+    type: 3}
 --- !u!114 &169219412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,6 +1216,18 @@ MonoBehaviour:
       - m_Target: {fileID: 169219411}
         m_TargetAssemblyTypeName: SelectPlayer, Assembly-CSharp
         m_MethodName: OnCharacterClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 169219411}
+        m_TargetAssemblyTypeName: SelectPlayer, Assembly-CSharp
+        m_MethodName: Deselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4803,9 +4821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4885c889e0b8bcf4abd82fe1e3edeb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectBorder_healer: {fileID: 0}
-  selectBorder_Dealer: {fileID: 0}
-  selectBorder_tanker: {fileID: 0}
 --- !u!1001 &1064354307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6836,8 +6851,8 @@ GameObject:
   - component: {fileID: 1570750243}
   - component: {fileID: 1570750246}
   - component: {fileID: 1570750245}
-  - component: {fileID: 1570750247}
   - component: {fileID: 1570750248}
+  - component: {fileID: 1570750247}
   m_Layer: 5
   m_Name: Dealer_Img
   m_TagString: Untagged
@@ -6919,6 +6934,12 @@ MonoBehaviour:
   dealer_border: {fileID: 359697328}
   healer_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
+  dealerPrefab: {fileID: 306615788120119874, guid: 8f0ea853b712d8d46a6210d1116d02e2,
+    type: 3}
+  healerPrefab: {fileID: 5384648026454396403, guid: eaf433cb511e0024e8d5df27f884381b,
+    type: 3}
+  tankerPrefab: {fileID: 752020975371630323, guid: 3ad5a457e43f37c41ae9949cd639e0e8,
+    type: 3}
 --- !u!114 &1570750248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6975,6 +6996,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1570750247}
+        m_TargetAssemblyTypeName: SelectPlayer, Assembly-CSharp
+        m_MethodName: Deselect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1600769581
 GameObject:
   m_ObjectHideFlags: 0
@@ -6986,8 +7019,8 @@ GameObject:
   - component: {fileID: 1600769582}
   - component: {fileID: 1600769585}
   - component: {fileID: 1600769584}
-  - component: {fileID: 1600769586}
   - component: {fileID: 1600769587}
+  - component: {fileID: 1600769586}
   m_Layer: 5
   m_Name: Tanker_Img
   m_TagString: Untagged
@@ -7069,6 +7102,12 @@ MonoBehaviour:
   dealer_border: {fileID: 359697328}
   healer_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
+  dealerPrefab: {fileID: 306615788120119874, guid: 8f0ea853b712d8d46a6210d1116d02e2,
+    type: 3}
+  healerPrefab: {fileID: 5384648026454396403, guid: eaf433cb511e0024e8d5df27f884381b,
+    type: 3}
+  tankerPrefab: {fileID: 752020975371630323, guid: 3ad5a457e43f37c41ae9949cd639e0e8,
+    type: 3}
 --- !u!114 &1600769587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7116,6 +7155,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1600769586}
         m_TargetAssemblyTypeName: SelectPlayer, Assembly-CSharp
         m_MethodName: OnCharacterClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1600769586}
+        m_TargetAssemblyTypeName: SelectPlayer, Assembly-CSharp
+        m_MethodName: Deselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
