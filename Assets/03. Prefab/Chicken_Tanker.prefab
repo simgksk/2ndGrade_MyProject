@@ -183,14 +183,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.32988036
+  m_Height: 0.84500396
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.008347908, y: 0.40828252, z: 0.17381454}
 --- !u!1 &757252742084262408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,7 +2617,7 @@ PrefabInstance:
     - target: {fileID: 772259333388610473, guid: f440c1e22e434b4438e44dac256a5b9e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.334
+      value: -0.324
       objectReference: {fileID: 0}
     - target: {fileID: 772259333388610473, guid: f440c1e22e434b4438e44dac256a5b9e,
         type: 3}
