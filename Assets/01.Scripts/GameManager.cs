@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] CanvasGroup gameOverPanelCanvasGroup;
     float fadeDuration = 1f;
+
     private void Awake()
     {
         if(instance == null)
