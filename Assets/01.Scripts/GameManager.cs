@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
         feedCnt += feed;
         UpdateFeedText();
     }
+    public void SubFeedCnt(int feed)
+    {
+        feedCnt -= feed;
+        UpdateFeedText();
+    }
     public void ShowGameOverPanel()
     {
         gameOverPanelCanvasGroup.gameObject.SetActive(true);

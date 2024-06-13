@@ -1215,7 +1215,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 169219411}
         m_TargetAssemblyTypeName: SelectPlayer, Assembly-CSharp
-        m_MethodName: OnCharacterClicked
+        m_MethodName: Deselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6986,7 +6986,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1570750247}
         m_TargetAssemblyTypeName: SelectPlayer, Assembly-CSharp
-        m_MethodName: OnCharacterClicked
+        m_MethodName: Deselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7154,7 +7154,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1600769586}
         m_TargetAssemblyTypeName: SelectPlayer, Assembly-CSharp
-        m_MethodName: OnCharacterClicked
+        m_MethodName: Deselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
