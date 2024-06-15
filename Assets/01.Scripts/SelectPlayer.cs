@@ -13,6 +13,7 @@ public enum PlayerType
 public class SelectPlayer : MonoBehaviour
 {
     [SerializeField] PlayerType playerType;
+    [SerializeField] Floor floor;
 
     [Header("Border")]
     [SerializeField] GameObject dealer_border;
@@ -57,28 +58,49 @@ public class SelectPlayer : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100f, floorLayerMask))
             {
                 Vector3 hitPos = hit.point;
-                hitPos.y = 0.3f;
+                Vector2Int gridPos = GetGridPosition(hitPos);
 
-                switch (playerType)
+                if (IsWithinFloor(gridPos))
                 {
-                    case PlayerType.dealer:
-                        GameObject _dealer = Instantiate(dealerPrefab);
-                        _dealer.transform.position = hitPos;
-                        GameManager.instance.SubFeedCnt(dealerFeed);
-                        break;
-                    case PlayerType.healer:
-                        GameObject _hearler = Instantiate(healerPrefab);
-                        _hearler.transform.position = hitPos;
-                        GameManager.instance.SubFeedCnt(healerFeed);
-                        break;
-                    case PlayerType.tanker:
-                        GameObject _tanker = Instantiate(tankerPrefab);
-                        _tanker.transform.position = hitPos;
-                        GameManager.instance.SubFeedCnt(tankerFeed);
-                        break;
+                    Vector3 cellCentorPos = floor.GetCellCenterPosition(gridPos);
+
+                    switch (playerType)
+                    {
+                        case PlayerType.dealer:
+                            GameObject _dealer = Instantiate(dealerPrefab);
+                            _dealer.transform.position = cellCentorPos;
+                            GameManager.instance.SubFeedCnt(dealerFeed);
+                            break;
+                        case PlayerType.healer:
+                            GameObject _hearler = Instantiate(healerPrefab);
+                            _hearler.transform.position = cellCentorPos;
+                            GameManager.instance.SubFeedCnt(healerFeed);
+                            break;
+                        case PlayerType.tanker:
+                            GameObject _tanker = Instantiate(tankerPrefab);
+                            _tanker.transform.position = cellCentorPos;
+                            GameManager.instance.SubFeedCnt(tankerFeed);
+                            break;
+                    }
                 }
+
             }
         }
+    }
+
+    private Vector2Int GetGridPosition(Vector3 hitPos)
+    {
+        Vector3 localPos = hitPos - floor.transform.position;
+
+        int x = Mathf.FloorToInt(localPos.x / floor.cellSize.x);
+        int z = Mathf.FloorToInt(localPos.z / floor.cellSize.y);
+
+        return new Vector2Int(x, z);
+    }
+
+    bool IsWithinFloor(Vector2Int gridPos)
+    {
+        return gridPos.x >= 0 && gridPos.x < floor.floorSize.x && gridPos.y >= 0 && gridPos.y < floor.floorSize.y;
     }
 
     public void OnCharacterClicked()
@@ -90,8 +112,6 @@ public class SelectPlayer : MonoBehaviour
         }
         else if(currentSelectedPlayer == null)
         {
-            
-
             SelectedPlayer();
         }
         else
@@ -131,7 +151,6 @@ public class SelectPlayer : MonoBehaviour
 
     public void Deselect()
     {
-        
         if (currentSelectedPlayer != null)
         {
             switch (currentSelectedPlayer.playerType)

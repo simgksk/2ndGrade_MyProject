@@ -224,7 +224,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3065779072488602816}
   - component: {fileID: -1014211788766523986}
-  - component: {fileID: -5870284949497966579}
   - component: {fileID: 6505000926600256911}
   m_Layer: 0
   m_Name: Bullet
@@ -263,33 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5989af13b5bbd4840b0efb7fe24fbd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &-5870284949497966579
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4000299145594015373}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6505000926600256911
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1180,6 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerType: 1
+  floor: {fileID: 1174474653}
   dealer_border: {fileID: 359697328}
   healer_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
@@ -1788,7 +1789,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
-  m_LocalPosition: {x: 7, y: 12.5, z: -7.5}
+  m_LocalPosition: {x: 4.5, y: 12.5, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5618,6 +5619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1174474652}
+  - component: {fileID: 1174474653}
   m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
@@ -5634,7 +5636,7 @@ Transform:
   m_GameObject: {fileID: 1174474651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 0.44999993, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5685,6 +5687,20 @@ Transform:
   - {fileID: 448834045}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1174474653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174474651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a684fab2a9d1ebe439dccef84882a16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorSize: {x: 0, y: 0}
+  cellSize: {x: 0, y: 0}
 --- !u!1 &1196341506
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,6 +6900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerType: 0
+  floor: {fileID: 1174474653}
   dealer_border: {fileID: 359697328}
   healer_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
@@ -7055,6 +7072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerType: 2
+  floor: {fileID: 1174474653}
   dealer_border: {fileID: 359697328}
   healer_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
@@ -8265,7 +8283,7 @@ Transform:
   m_GameObject: {fileID: 1847750254}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45, z: -12.8}
+  m_LocalPosition: {x: -2.58, y: -0.04, z: -12.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8622,12 +8640,12 @@ PrefabInstance:
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.89
+      value: -4.4700003
       objectReference: {fileID: 0}
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: -0.03999999
       objectReference: {fileID: 0}
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29,
         type: 3}
@@ -9199,7 +9217,7 @@ Transform:
   m_GameObject: {fileID: 2080661949}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -13.62, y: -0.82, z: 1.7000002}
+  m_LocalPosition: {x: -16.199999, y: -1.31, z: 1.7000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
