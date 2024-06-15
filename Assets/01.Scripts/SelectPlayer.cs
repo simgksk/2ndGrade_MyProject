@@ -13,12 +13,14 @@ public enum PlayerType
 public class SelectPlayer : MonoBehaviour
 {
     [SerializeField] PlayerType playerType;
-    [SerializeField] Floor floor;
 
     [Header("Border")]
     [SerializeField] GameObject dealer_border;
     [SerializeField] GameObject healer_border;
     [SerializeField] GameObject tanker_border;
+
+    [Header("Effect")]
+    [SerializeField] GameObject floatingImagePrefab;
     
     [Header("PlayerPrefab")]
     [SerializeField] GameObject dealerPrefab;
@@ -27,12 +29,16 @@ public class SelectPlayer : MonoBehaviour
 
     [Header("Layer Mask")]
     [SerializeField] LayerMask floorLayerMask;
+    [SerializeField] Transform imageSelectionUI;
 
     static SelectPlayer currentSelectedPlayer;
 
     int dealerFeed = 100;
     int healerFeed = 50;
     int tankerFeed = 150;
+
+    float lastInstallationTime = -3f;
+    bool isCooldown = false;
 
     void Start()
     {
@@ -50,59 +56,90 @@ public class SelectPlayer : MonoBehaviour
 
     private void PlayerInstallation()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time >= lastInstallationTime + 3f)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, 100f, floorLayerMask))
             {
-                Vector3 hitPos = hit.point;
-                Vector2Int gridPos = GetGridPosition(hitPos);
+                FloorCell floorCell = hit.collider.GetComponent<FloorCell>();
 
-                if (IsWithinFloor(gridPos))
+                if (floorCell != null && !floorCell.IsOccupied())
                 {
-                    Vector3 cellCentorPos = floor.GetCellCenterPosition(gridPos);
+                    Vector3 cellCenter = floorCell.GetCenterPosition();
+                    GameObject newObj = null;
 
                     switch (playerType)
                     {
                         case PlayerType.dealer:
-                            GameObject _dealer = Instantiate(dealerPrefab);
-                            _dealer.transform.position = cellCentorPos;
+                            newObj = Instantiate(dealerPrefab);
+                            newObj.transform.position = cellCenter;
                             GameManager.instance.SubFeedCnt(dealerFeed);
                             break;
                         case PlayerType.healer:
-                            GameObject _hearler = Instantiate(healerPrefab);
-                            _hearler.transform.position = cellCentorPos;
+                            newObj = Instantiate(healerPrefab);
+                            newObj.transform.position = cellCenter;
                             GameManager.instance.SubFeedCnt(healerFeed);
                             break;
                         case PlayerType.tanker:
-                            GameObject _tanker = Instantiate(tankerPrefab);
-                            _tanker.transform.position = cellCentorPos;
+                            newObj = Instantiate(tankerPrefab);
+                            newObj.transform.position = cellCenter;
                             GameManager.instance.SubFeedCnt(tankerFeed);
                             break;
+                    }
+
+                    if (newObj != null)
+                    {
+                        floorCell.PlaceObj(newObj);
+                        lastInstallationTime = Time.time;
+                        StartCoroutine(DisableSelectionForCooldown());
+                        AddFloatingImage(cellCenter);
                     }
                 }
 
             }
         }
     }
-
-    private Vector2Int GetGridPosition(Vector3 hitPos)
+    IEnumerator DisableSelectionForCooldown()
     {
-        Vector3 localPos = hitPos - floor.transform.position;
+        isCooldown = true;
 
-        int x = Mathf.FloorToInt(localPos.x / floor.cellSize.x);
-        int z = Mathf.FloorToInt(localPos.z / floor.cellSize.y);
+        yield return new WaitForSeconds(3f);
 
-        return new Vector2Int(x, z);
+        isCooldown = false;
     }
-
-    bool IsWithinFloor(Vector2Int gridPos)
+    void AddFloatingImage(Vector3 cellCenter)
     {
-        return gridPos.x >= 0 && gridPos.x < floor.floorSize.x && gridPos.y >= 0 && gridPos.y < floor.floorSize.y;
-    }
+        Canvas canvas = FindObjectOfType<Canvas>();
+        if (canvas != null)
+        {
+            GameObject floatingImage = Instantiate(floatingImagePrefab, imageSelectionUI);
+            RectTransform rectTransform = floatingImage.GetComponent<RectTransform>();
+            rectTransform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, cellCenter);
 
+            rectTransform.sizeDelta = new Vector2(100f, 100f);
+
+            StartCoroutine(ShrinkFloatingImage(rectTransform));
+        }
+    }
+    IEnumerator ShrinkFloatingImage(RectTransform rectTransform)
+    {
+        float duration = 3f;
+        float elapsedTime = 0;
+        float startHeight = rectTransform.rect.height;
+        Vector2 startSize = rectTransform.sizeDelta;
+
+        while (elapsedTime < duration)
+        {
+            float newY = Mathf.Lerp(startHeight, 0, elapsedTime / duration);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, newY);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(rectTransform.gameObject);
+    }
     public void OnCharacterClicked()
     {
         if (currentSelectedPlayer == this)
