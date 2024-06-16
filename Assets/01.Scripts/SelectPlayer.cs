@@ -21,6 +21,12 @@ public class SelectPlayer : MonoBehaviour
 
     [Header("Effect")]
     [SerializeField] GameObject floatingImagePrefab;
+    [SerializeField] GameObject dealer_NeedFeedImage;
+    [SerializeField] GameObject healer_NeedFeedImage;
+    [SerializeField] GameObject tanker_NeedFeedImage;
+    [SerializeField] Transform dealerUI;
+    [SerializeField] Transform healerUI;
+    [SerializeField] Transform tankerUI;
     
     [Header("PlayerPrefab")]
     [SerializeField] GameObject dealerPrefab;
@@ -29,7 +35,6 @@ public class SelectPlayer : MonoBehaviour
 
     [Header("Layer Mask")]
     [SerializeField] LayerMask floorLayerMask;
-    [SerializeField] Transform imageSelectionUI;
 
     static SelectPlayer currentSelectedPlayer;
 
@@ -44,7 +49,11 @@ public class SelectPlayer : MonoBehaviour
     {
         dealer_border.SetActive(false); 
         healer_border.SetActive(false); 
-        tanker_border.SetActive(false); 
+        tanker_border.SetActive(false);
+
+        dealer_NeedFeedImage.SetActive(false);
+        healer_NeedFeedImage.SetActive(false);
+        tanker_NeedFeedImage.SetActive(false);
     }
     private void Update()
     {
@@ -73,19 +82,36 @@ public class SelectPlayer : MonoBehaviour
                     switch (playerType)
                     {
                         case PlayerType.dealer:
-                            newObj = Instantiate(dealerPrefab);
-                            newObj.transform.position = cellCenter;
-                            GameManager.instance.SubFeedCnt(dealerFeed);
+                            if(GameManager.instance.currentFeed >= dealerFeed)
+                            {
+                                newObj = Instantiate(dealerPrefab);
+                                newObj.transform.position = cellCenter;
+                                GameManager.instance.SubFeedCnt(dealerFeed);
+                                AddFloatingImage(dealerUI);
+                                OnCharacterClicked();
+                            }
                             break;
+
                         case PlayerType.healer:
-                            newObj = Instantiate(healerPrefab);
-                            newObj.transform.position = cellCenter;
-                            GameManager.instance.SubFeedCnt(healerFeed);
+                            if (GameManager.instance.currentFeed >= healerFeed)
+                            { 
+                                newObj = Instantiate(healerPrefab);
+                                newObj.transform.position = cellCenter;
+                                GameManager.instance.SubFeedCnt(healerFeed);
+                                AddFloatingImage(healerUI);
+                                OnCharacterClicked();
+                            }
                             break;
+
                         case PlayerType.tanker:
-                            newObj = Instantiate(tankerPrefab);
-                            newObj.transform.position = cellCenter;
-                            GameManager.instance.SubFeedCnt(tankerFeed);
+                            if (GameManager.instance.currentFeed >= tankerFeed)
+                            {
+                                newObj = Instantiate(tankerPrefab);
+                                newObj.transform.position = cellCenter;
+                                GameManager.instance.SubFeedCnt(tankerFeed);
+                                AddFloatingImage(tankerUI);
+                                OnCharacterClicked();
+                            }
                             break;
                     }
 
@@ -94,7 +120,6 @@ public class SelectPlayer : MonoBehaviour
                         floorCell.PlaceObj(newObj);
                         lastInstallationTime = Time.time;
                         StartCoroutine(DisableSelectionForCooldown());
-                        AddFloatingImage(cellCenter);
                     }
                 }
 
@@ -109,26 +134,20 @@ public class SelectPlayer : MonoBehaviour
 
         isCooldown = false;
     }
-    void AddFloatingImage(Vector3 cellCenter)
+    void AddFloatingImage(Transform uiTransform)
     {
-        Canvas canvas = FindObjectOfType<Canvas>();
-        if (canvas != null)
-        {
-            GameObject floatingImage = Instantiate(floatingImagePrefab, imageSelectionUI);
-            RectTransform rectTransform = floatingImage.GetComponent<RectTransform>();
-            rectTransform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, cellCenter);
+        GameObject floatingImage = Instantiate(floatingImagePrefab, uiTransform);
+        RectTransform rectTransform = floatingImage.GetComponent<RectTransform>();
 
-            rectTransform.sizeDelta = new Vector2(100f, 100f);
+        rectTransform.anchoredPosition = Vector2.zero;
 
-            StartCoroutine(ShrinkFloatingImage(rectTransform));
-        }
+        StartCoroutine(ShrinkFloatingImage(rectTransform));
     }
     IEnumerator ShrinkFloatingImage(RectTransform rectTransform)
     {
         float duration = 3f;
         float elapsedTime = 0;
         float startHeight = rectTransform.rect.height;
-        Vector2 startSize = rectTransform.sizeDelta;
 
         while (elapsedTime < duration)
         {

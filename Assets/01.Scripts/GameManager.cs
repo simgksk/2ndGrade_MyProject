@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI feedCntTxt;
     int feedCnt = 100;
+    public int currentFeed = 0;
 
     [SerializeField] CanvasGroup gameOverPanelCanvasGroup;
     float fadeDuration = 1f;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     private void UpdateFeedText()
     {
         feedCntTxt.text = feedCnt.ToString();
+        currentFeed = feedCnt;
     }
     public void AddFeedCnt(int feed)
     {
