@@ -61,6 +61,7 @@ public class SelectPlayer : MonoBehaviour
         {
             PlayerInstallation();
         }
+        UpdateFeedStatus();
     }
 
     private void PlayerInstallation()
@@ -82,23 +83,23 @@ public class SelectPlayer : MonoBehaviour
                     switch (playerType)
                     {
                         case PlayerType.dealer:
-                            if(GameManager.instance.currentFeed >= dealerFeed)
+                            if (GameManager.instance.currentFeed >= dealerFeed)
                             {
                                 newObj = Instantiate(dealerPrefab);
                                 newObj.transform.position = cellCenter;
                                 GameManager.instance.SubFeedCnt(dealerFeed);
-                                AddFloatingImage(dealerUI);
+                                AddFloatingImage(dealerUI.transform);
                                 OnCharacterClicked();
                             }
                             break;
 
                         case PlayerType.healer:
                             if (GameManager.instance.currentFeed >= healerFeed)
-                            { 
+                            {
                                 newObj = Instantiate(healerPrefab);
                                 newObj.transform.position = cellCenter;
                                 GameManager.instance.SubFeedCnt(healerFeed);
-                                AddFloatingImage(healerUI);
+                                AddFloatingImage(healerUI.transform);
                                 OnCharacterClicked();
                             }
                             break;
@@ -109,7 +110,7 @@ public class SelectPlayer : MonoBehaviour
                                 newObj = Instantiate(tankerPrefab);
                                 newObj.transform.position = cellCenter;
                                 GameManager.instance.SubFeedCnt(tankerFeed);
-                                AddFloatingImage(tankerUI);
+                                AddFloatingImage(tankerUI.transform);
                                 OnCharacterClicked();
                             }
                             break;
@@ -125,6 +126,17 @@ public class SelectPlayer : MonoBehaviour
 
             }
         }
+    }
+    void UpdateFeedStatus()
+    {
+        /*dealer_border.SetActive(GameManager.instance.currentFeed >= dealerFeed);
+        healer_border.SetActive(GameManager.instance.currentFeed >= healerFeed);
+        tanker_border.SetActive(GameManager.instance.currentFeed >= tankerFeed);*/
+
+        dealer_NeedFeedImage.SetActive(GameManager.instance.currentFeed < dealerFeed);
+        healer_NeedFeedImage.SetActive(GameManager.instance.currentFeed < healerFeed);
+        tanker_NeedFeedImage.SetActive(GameManager.instance.currentFeed < tankerFeed);
+
     }
     IEnumerator DisableSelectionForCooldown()
     {

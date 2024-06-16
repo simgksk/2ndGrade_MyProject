@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aee842998a0feb459d1f12b46b1b7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerType: 0
+  playerType: 1
   dealer_border: {fileID: 359697328}
   healer_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
@@ -2180,7 +2180,7 @@ GameObject:
   - component: {fileID: 392882810}
   - component: {fileID: 392882809}
   m_Layer: 5
-  m_Name: NotSelect
+  m_Name: H_NotSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4050,7 +4050,7 @@ GameObject:
   - component: {fileID: 833007623}
   - component: {fileID: 833007622}
   m_Layer: 5
-  m_Name: NotSelect
+  m_Name: T_NotSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4068,7 +4068,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1755840289}
+  m_Father: {fileID: 1600769582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7147,6 +7147,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1755840289}
+  - {fileID: 833007621}
   m_Father: {fileID: 1092809378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7204,7 +7205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aee842998a0feb459d1f12b46b1b7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerType: 0
+  playerType: 2
   dealer_border: {fileID: 359697328}
   healer_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
@@ -7743,8 +7744,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 833007621}
+  m_Children: []
   m_Father: {fileID: 1600769582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -9723,7 +9723,7 @@ GameObject:
   - component: {fileID: 114811830928016688}
   - component: {fileID: 962307969109335082}
   m_Layer: 5
-  m_Name: NotSelect
+  m_Name: D_NotSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
