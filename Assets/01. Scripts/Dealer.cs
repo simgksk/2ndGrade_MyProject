@@ -8,9 +8,11 @@ public class Dealer : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletPos;
+    Animator anim;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         StartCoroutine(BulletSpawn());
     }
     
@@ -18,6 +20,7 @@ public class Dealer : MonoBehaviour
     {
         while (true)
         {
+            anim.SetBool("isAttack", true);
             float spawnTime = 5f;
             yield return new WaitForSeconds(spawnTime);
 
