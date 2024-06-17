@@ -42,7 +42,7 @@ public class SelectPlayer : MonoBehaviour
     int healerFeed = 50;
     int tankerFeed = 150;
 
-    float lastInstallationTime = -3f;
+    float lastInstallationTime = -5f;
     bool isCooldown = false;
 
     void Start()
@@ -129,20 +129,28 @@ public class SelectPlayer : MonoBehaviour
     }
     void UpdateFeedStatus()
     {
-        /*dealer_border.SetActive(GameManager.instance.currentFeed >= dealerFeed);
-        healer_border.SetActive(GameManager.instance.currentFeed >= healerFeed);
-        tanker_border.SetActive(GameManager.instance.currentFeed >= tankerFeed);*/
-
         dealer_NeedFeedImage.SetActive(GameManager.instance.currentFeed < dealerFeed);
         healer_NeedFeedImage.SetActive(GameManager.instance.currentFeed < healerFeed);
         tanker_NeedFeedImage.SetActive(GameManager.instance.currentFeed < tankerFeed);
 
+        if (GameManager.instance.currentFeed < dealerFeed && currentSelectedPlayer?.playerType == PlayerType.dealer)
+        {
+            currentSelectedPlayer.Deselect();
+        }
+        if (GameManager.instance.currentFeed < healerFeed && currentSelectedPlayer?.playerType == PlayerType.healer)
+        {
+            currentSelectedPlayer.Deselect();
+        }
+        if (GameManager.instance.currentFeed < tankerFeed && currentSelectedPlayer?.playerType == PlayerType.tanker)
+        {
+            currentSelectedPlayer.Deselect();
+        }
     }
     IEnumerator DisableSelectionForCooldown()
     {
         isCooldown = true;
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         isCooldown = false;
     }
@@ -157,14 +165,15 @@ public class SelectPlayer : MonoBehaviour
     }
     IEnumerator ShrinkFloatingImage(RectTransform rectTransform)
     {
-        float duration = 3f;
+        float duration = 5f;
         float elapsedTime = 0;
         float startHeight = rectTransform.rect.height;
 
         while (elapsedTime < duration)
         {
-            float newY = Mathf.Lerp(startHeight, 0, elapsedTime / duration);
-            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, newY);
+            float newHeight = Mathf.Lerp(startHeight, 0, elapsedTime / duration);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, newHeight);
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, Mathf.Lerp(0, startHeight / 2, elapsedTime / duration));
             elapsedTime += Time.deltaTime;
             yield return null;
         }

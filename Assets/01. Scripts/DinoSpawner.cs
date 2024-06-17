@@ -20,7 +20,7 @@ public class DinoSpawner : MonoBehaviour
     {
         while (true)
         {
-            float rdSpawnTime = Random.Range(5f, 10f);
+            float rdSpawnTime = Random.Range(10f, 15f);
             yield return new WaitForSeconds(rdSpawnTime);
 
             int rdIndex = Random.Range(0, dinoPrefabs.Length);
