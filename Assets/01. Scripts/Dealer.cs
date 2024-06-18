@@ -8,11 +8,14 @@ public class Dealer : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletPos;
+
+    Transform bulletParent;
     Animator anim;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        bulletParent = new GameObject("Bullet").transform;
         StartCoroutine(BulletSpawn());
     }
     
@@ -20,13 +23,18 @@ public class Dealer : MonoBehaviour
     {
         while (true)
         {
-            anim.SetBool("isAttack", true);
+            anim.SetBool("isAttack", false);
+
             float spawnTime = 5f;
             yield return new WaitForSeconds(spawnTime);
 
             Quaternion bulletRotation = Quaternion.Euler(0, 90, 0);
             GameObject spawnedBullet = Instantiate(bulletPrefab, bulletPos.position, bulletRotation);
-            spawnedBullet.transform.SetParent(bulletPos);
+            spawnedBullet.transform.SetParent(bulletParent);
+
+            anim.SetBool("isAttack", true);
+
+            yield return new WaitForSeconds(.5f);
         }
     }
 

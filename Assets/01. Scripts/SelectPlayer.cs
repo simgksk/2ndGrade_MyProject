@@ -78,6 +78,8 @@ public class SelectPlayer : MonoBehaviour
                 if (floorCell != null && !floorCell.IsOccupied())
                 {
                     Vector3 cellCenter = floorCell.GetCenterPosition();
+                    cellCenter.y = 0;
+
                     GameObject newObj = null;
 
                     switch (playerType)
