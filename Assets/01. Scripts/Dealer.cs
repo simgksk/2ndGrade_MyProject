@@ -9,6 +9,9 @@ public class Dealer : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletPos;
 
+    [SerializeField] Transform playerTrm;
+    [SerializeField] GameObject target;
+
     Transform bulletParent;
     Animator anim;
 
@@ -18,7 +21,22 @@ public class Dealer : MonoBehaviour
         bulletParent = new GameObject("Bullet").transform;
         StartCoroutine(BulletSpawn());
     }
-    
+
+    void Update()
+    {
+        RaycastHit hit;
+
+        // Draw a debug ray (optional)
+        Debug.DrawRay(playerTrm.position, (target.transform.position - playerTrm.position).normalized * 100f, Color.green);
+
+        // Perform a raycast
+        if (Physics.Raycast(playerTrm.position, (target.transform.position - playerTrm.position).normalized, out hit))
+        {
+            Debug.Log("Hit object: " + hit.collider.name);
+        }
+
+    }
+
     IEnumerator BulletSpawn()
     {
         while (true)
