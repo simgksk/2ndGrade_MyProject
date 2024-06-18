@@ -8,12 +8,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    [Header("Feed")]
     [SerializeField] TextMeshProUGUI feedCntTxt;
     int feedCnt = 100;
     public int currentFeed = 0;
 
+    [Header("Panel")]
     [SerializeField] CanvasGroup gameOverPanelCanvasGroup;
     float fadeDuration = 1f;
+
+    [Header("Timer")]
+    [SerializeField] TextMeshProUGUI timeTxt;
+    float elapsedTime;
 
     private void Awake()
     {
@@ -29,7 +35,13 @@ public class GameManager : MonoBehaviour
         gameOverPanelCanvasGroup.gameObject.SetActive(false);
         UpdateFeedText();
     }
-
+    private void Update()
+    {
+        elapsedTime += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+        timeTxt.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
     private void UpdateFeedText()
     {
         feedCntTxt.text = feedCnt.ToString();
