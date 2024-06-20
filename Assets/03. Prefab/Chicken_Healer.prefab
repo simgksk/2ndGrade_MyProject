@@ -844,6 +844,37 @@ Transform:
   - {fileID: 588393787894177482}
   m_Father: {fileID: 4386179789838845816}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &3682443183567058870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833431983096824621}
+  m_Layer: 0
+  m_Name: FeedSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &833431983096824621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682443183567058870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.385, z: 0.142}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4386179789838845816}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3691842084859242715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,6 +1321,7 @@ GameObject:
   - component: {fileID: 4386179789838845816}
   - component: {fileID: 4328271228082136283}
   - component: {fileID: 4309858390562675993}
+  - component: {fileID: 359860501703969035}
   m_Layer: 0
   m_Name: Chicken_Healer
   m_TagString: Healer
@@ -1311,6 +1343,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6821779136700726836}
+  - {fileID: 833431983096824621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &4328271228082136283
@@ -1363,6 +1396,21 @@ CapsuleCollider:
   m_Height: 1.0925157
   m_Direction: 1
   m_Center: {x: -0.107274644, y: 0.4893524, z: 0.1729825}
+--- !u!114 &359860501703969035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5384648026454396403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676e2c713c78aef44aec2121a93bd413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedPrefab: {fileID: 4000299145594015373, guid: 36f26bb469cf694488f149e30cde2506,
+    type: 3}
+  feedPos: {fileID: 833431983096824621}
 --- !u!1 &5449212874381524239
 GameObject:
   m_ObjectHideFlags: 0
