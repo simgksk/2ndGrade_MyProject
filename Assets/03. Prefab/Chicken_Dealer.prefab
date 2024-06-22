@@ -1273,7 +1273,9 @@ MonoBehaviour:
     type: 3}
   bulletPos: {fileID: 2231006762281665622}
   playerTrm: {fileID: 7021248945524945772}
-  target: {fileID: 7849246865178958625, guid: f48d741165cd29742a391f57a2dbcab2, type: 3}
+  targetLine:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!95 &3893438606229608877
 Animator:
   serializedVersion: 5

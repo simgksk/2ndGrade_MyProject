@@ -1,58 +1,58 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Dealer : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletPos;
-
     [SerializeField] Transform playerTrm;
-    [SerializeField] GameObject target;
+    [SerializeField] LayerMask targetLine;
 
     Transform bulletParent;
     Animator anim;
+    bool isBulletSpawned;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         bulletParent = new GameObject("Bullet").transform;
-        StartCoroutine(BulletSpawn());
+        isBulletSpawned = false;
     }
 
     void Update()
     {
         RaycastHit hit;
+        float maxDistance = 20f;
 
-        Debug.DrawRay(playerTrm.position, (target.transform.position - playerTrm.position).normalized * 100f, Color.green);
-
-        if (Physics.Raycast(playerTrm.position, (target.transform.position - playerTrm.position).normalized, out hit))
+        if (Physics.Raycast(playerTrm.position, playerTrm.forward, out hit, maxDistance, targetLine))
         {
-            Debug.Log("Hit object: " + hit.collider.name);
+            maxDistance = hit.distance;
+            if (hit.collider.CompareTag("Dino") && !isBulletSpawned)
+            {
+                StartCoroutine(BulletSpawn());
+            }
         }
 
+        Debug.DrawRay(playerTrm.position, playerTrm.forward * maxDistance, Color.green);
     }
 
     IEnumerator BulletSpawn()
     {
-        while (true)
-        {
-            anim.SetBool("isAttack", false);
+        isBulletSpawned = true;
 
-            float spawnTime = 5f;
-            yield return new WaitForSeconds(spawnTime);
+        anim.SetBool("isAttack", true); 
+        yield return new WaitForSeconds(0.1f);
 
-            Quaternion bulletRotation = Quaternion.Euler(0, 90, 0);
-            Vector3 spawnPosition = bulletPos.TransformPoint(Vector3.zero);
-            GameObject spawnedBullet = Instantiate(bulletPrefab, spawnPosition, bulletRotation);
-            spawnedBullet.transform.SetParent(bulletParent);
+        Quaternion bulletRotation = Quaternion.LookRotation(playerTrm.forward);
+        Vector3 spawnPosition = bulletPos.position;
 
-            anim.SetBool("isAttack", true);
+        GameObject spawnedBullet = Instantiate(bulletPrefab, spawnPosition, bulletRotation);
+        spawnedBullet.transform.SetParent(bulletParent);
 
-            yield return new WaitForSeconds(.5f);
-        }
+        yield return new WaitForSeconds(1f); 
+
+        anim.SetBool("isAttack", false);
+
+        isBulletSpawned = false;
     }
-
 }

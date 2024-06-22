@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5058709454099781326}
   - component: {fileID: 6496760290793247408}
   - component: {fileID: 5539705736187650864}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stegadon_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5609715699740474063}
   - component: {fileID: -5403910455753280076}
   - component: {fileID: 2273840699124873878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stegosaurus
   m_TagString: Dino
   m_Icon: {fileID: 0}

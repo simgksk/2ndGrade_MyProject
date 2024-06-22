@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7835416196001822122}
   - component: {fileID: 9082258046108871151}
   - component: {fileID: 4547283422828575426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: -5617690581369897377}
   - component: {fileID: -908195936938211202}
   - component: {fileID: 1973805185711039198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mofletitos
   m_TagString: Dino
   m_Icon: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e726776a590ad248b0c53696d691f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dinoType: 0
 --- !u!95 &1973805185711039198
 Animator:
   serializedVersion: 5
