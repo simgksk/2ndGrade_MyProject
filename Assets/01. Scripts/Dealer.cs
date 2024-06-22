@@ -26,10 +26,8 @@ public class Dealer : MonoBehaviour
     {
         RaycastHit hit;
 
-        // Draw a debug ray (optional)
         Debug.DrawRay(playerTrm.position, (target.transform.position - playerTrm.position).normalized * 100f, Color.green);
 
-        // Perform a raycast
         if (Physics.Raycast(playerTrm.position, (target.transform.position - playerTrm.position).normalized, out hit))
         {
             Debug.Log("Hit object: " + hit.collider.name);
