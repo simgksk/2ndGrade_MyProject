@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 3065779072488602816}
   - component: {fileID: 6518946843600939772}
   - component: {fileID: 6341048690293428098}
+  - component: {fileID: 1386062786377108760}
   m_Layer: 0
   m_Name: Healer Feed
   m_TagString: Untagged
@@ -519,6 +520,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1386062786377108760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000299145594015373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3fa96b6e6d62845aff36b8ae5631c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4912134418984565204
 GameObject:
   m_ObjectHideFlags: 0

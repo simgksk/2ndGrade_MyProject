@@ -45,7 +45,8 @@ public class Dealer : MonoBehaviour
             yield return new WaitForSeconds(spawnTime);
 
             Quaternion bulletRotation = Quaternion.Euler(0, 90, 0);
-            GameObject spawnedBullet = Instantiate(bulletPrefab, bulletPos.position, bulletRotation);
+            Vector3 spawnPosition = bulletPos.TransformPoint(Vector3.zero);
+            GameObject spawnedBullet = Instantiate(bulletPrefab, spawnPosition, bulletRotation);
             spawnedBullet.transform.SetParent(bulletParent);
 
             anim.SetBool("isAttack", true);
