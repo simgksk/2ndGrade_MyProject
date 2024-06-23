@@ -12,7 +12,7 @@ public class HPbar : MonoBehaviour
     public Vector3 offSet;
 
     float maxHP = 100f;
-    float currentHP;
+    public float currentHP;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class HPbar : MonoBehaviour
         transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, 
             Camera.main.transform.rotation * Vector3.up);
     }
-    public void Heal(float damage)
+    public void Damage(float damage)
     {
         currentHP -= damage;
         if (currentHP > maxHP)
@@ -37,6 +37,12 @@ public class HPbar : MonoBehaviour
     private void UpdateHPBar()
     {
         float hpRatio = currentHP / maxHP;
-        hpBar.localScale = new Vector3(hpRatio, 1, 1);
+        float newScaleX = hpRatio; 
+
+        float leftEdgeX = hpBarBackground.position.x + hpBarBackground.localScale.x * -0.5f;
+
+        hpBar.position = new Vector3(leftEdgeX - newScaleX * -0.5f, hpBar.position.y, hpBar.position.z);
+
+        hpBar.localScale = new Vector3(newScaleX, 1, 1);
     }
 }

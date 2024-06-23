@@ -29,7 +29,10 @@ public class ChickenFeed : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        GameManager.instance.AddFeedCnt(feedCnt);
-        Destroy(gameObject);
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.AddFeedCnt(feedCnt);
+            Destroy(gameObject);
+        }
     }
 }

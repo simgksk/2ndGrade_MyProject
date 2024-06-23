@@ -61,7 +61,10 @@ public class SelectPlayer : MonoBehaviour
         {
             PlayerInstallation();
         }
-        UpdateFeedStatus();
+        if (GameManager.instance != null)
+        {
+            UpdateFeedStatus();
+        }
     }
 
     private void PlayerInstallation()

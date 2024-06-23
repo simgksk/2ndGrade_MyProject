@@ -10,13 +10,20 @@ public class Healer : MonoBehaviour
     [SerializeField] Transform feedPos;
 
     Transform feedParent;
+    HPBarManager hpBarManager;
 
     void Start()
     {
+        hpBarManager = FindObjectOfType<HPBarManager>();
+        hpBarManager.SetupHPBar(transform);
+
         feedParent = new GameObject("HealerFeed").transform;
         StartCoroutine(FeedSpwan());
     }
-
+    private void OnDestroy()
+    {
+        hpBarManager.RemoveHPBar(transform);
+    }
     IEnumerator FeedSpwan()
     {
         while (true)
@@ -43,6 +50,11 @@ public class Healer : MonoBehaviour
 
         while (elapsedTime < duration)
         {
+            if (obj == null)
+            {
+                yield break;
+            }
+
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
             float height = Mathf.Sin(Mathf.PI * t);

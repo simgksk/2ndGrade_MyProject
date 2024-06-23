@@ -18,6 +18,7 @@ public class Dealer : MonoBehaviour
     {
         hpBarManager = FindObjectOfType<HPBarManager>();
         hpBarManager.SetupHPBar(transform);
+
         anim = GetComponent<Animator>();
         bulletParent = new GameObject("Bullet").transform;
         isBulletSpawned = false;

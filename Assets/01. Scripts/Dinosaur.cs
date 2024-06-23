@@ -16,8 +16,19 @@ public class Dinosaur : MonoBehaviour
     [SerializeField] Transform dinoTransform;
     [SerializeField] LayerMask chicken;
 
+    HPBarManager hpBarManager;
+    HPbar hpBar;
+
+    float damage = 10f;
+
     void Start()
     {
+        hpBarManager = FindObjectOfType<HPBarManager>();
+        if (hpBarManager != null)
+        {
+            hpBar = hpBarManager.SetupHPBar(transform, true);
+        }
+
         anim = GetComponent<Animator>();
         moveCoroutine = StartCoroutine(DinoMove());
     }
@@ -40,7 +51,13 @@ public class Dinosaur : MonoBehaviour
 
         Debug.DrawRay(dinoTransform.position, dinoTransform.forward * distance, Color.red);
     }
-
+    private void OnDestroy()
+    {
+        if (hpBarManager != null)
+        {
+            hpBarManager.RemoveHPBar(transform);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Tractor"))
@@ -65,7 +82,16 @@ public class Dinosaur : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Bullet"))
         {
-            Destroy(gameObject);
+            if (hpBar != null)
+            {
+                hpBar.Damage(damage);
+
+                if (hpBar.currentHP <= 0)
+                {
+                    Destroy(gameObject);
+                }
+            }
+
         }
         if (other.gameObject.CompareTag("Barn"))
         {
