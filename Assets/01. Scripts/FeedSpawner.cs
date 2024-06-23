@@ -16,7 +16,7 @@ public class FeedSpawner : MonoBehaviour
     {
         while (true)
         {
-            float rdSpawnTime = Random.Range(5f, 10f);
+            float rdSpawnTime = Random.Range(7f, 10f);
             yield return new WaitForSeconds(rdSpawnTime);
 
             Transform childTransform = transform.GetChild(Random.Range(0, transform.childCount));

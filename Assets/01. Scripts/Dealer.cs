@@ -10,14 +10,21 @@ public class Dealer : MonoBehaviour
     [SerializeField] LayerMask targetLine;
 
     HPBarManager hpBarManager;
+    HPbar hpBar;
+
     Transform bulletParent;
     Animator anim;
+
     bool isBulletSpawned;
+    float damage = 1f;
 
     void Start()
     {
         hpBarManager = FindObjectOfType<HPBarManager>();
-        hpBarManager.SetupHPBar(transform);
+        if (hpBarManager != null)
+        {
+            hpBar = hpBarManager.SetupHPBar(transform);
+        }
 
         anim = GetComponent<Animator>();
         bulletParent = new GameObject("Bullet").transform;
@@ -63,10 +70,21 @@ public class Dealer : MonoBehaviour
         GameObject spawnedBullet = Instantiate(bulletPrefab, spawnPosition, bulletRotation);
         spawnedBullet.transform.SetParent(bulletParent);
 
-        yield return new WaitForSeconds(1f); 
+        yield return new WaitForSeconds(3f); 
 
         anim.SetBool("isAttack", false);
 
         isBulletSpawned = false;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("DinoMouse"))
+        {
+            hpBar.Damage(damage);
+            if (hpBar.currentHP <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

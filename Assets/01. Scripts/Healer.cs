@@ -28,7 +28,7 @@ public class Healer : MonoBehaviour
     {
         while (true)
         {
-            float spawnTime = 10f;
+            float spawnTime = 5f;
             yield return new WaitForSeconds(spawnTime);
 
             Quaternion feedRotation = Quaternion.Euler(0, 90, 0);

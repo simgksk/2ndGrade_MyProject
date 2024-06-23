@@ -42,7 +42,7 @@ public class SelectPlayer : MonoBehaviour
     int healerFeed = 50;
     int tankerFeed = 150;
 
-    float lastInstallationTime = -5f;
+    float lastInstallationTime = -7f;
     bool isCooldown = false;
 
     void Start()
@@ -155,7 +155,7 @@ public class SelectPlayer : MonoBehaviour
     {
         isCooldown = true;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7f);
 
         isCooldown = false;
     }
@@ -170,7 +170,7 @@ public class SelectPlayer : MonoBehaviour
     }
     IEnumerator ShrinkFloatingImage(RectTransform rectTransform)
     {
-        float duration = 5f;
+        float duration = 7f;
         float elapsedTime = 0;
         float startHeight = rectTransform.rect.height;
 
