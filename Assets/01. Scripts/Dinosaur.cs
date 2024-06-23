@@ -9,10 +9,11 @@ public enum DinoType
 
 public class Dinosaur : MonoBehaviour
 {
+    [SerializeField] DinoType dinoType;
+    [SerializeField] Transform dinoTransform;
     float moveSpeed = .5f;
     Animator anim;
     Coroutine moveCoroutine;
-    [SerializeField] DinoType dinoType;
 
     void Start()
     {
@@ -22,6 +23,17 @@ public class Dinosaur : MonoBehaviour
 
     void Update()
     {
+        RaycastHit hit;
+        float distance = 1f;
+
+        /*if (Physics.Raycast(dinoTransform.position, dinoTransform.forward, out hit, distance))
+        {
+            if (hit.collider.CompareTag("Dino"))
+            {
+            }
+        }*/
+
+        Debug.DrawRay(dinoTransform.position, dinoTransform.forward * distance, Color.red);
     }
 
     private void OnTriggerEnter(Collider other)

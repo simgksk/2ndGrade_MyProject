@@ -3,23 +3,36 @@ using UnityEngine;
 
 public class Dealer : MonoBehaviour
 {
+    [Header("Bullet")]
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletPos;
     [SerializeField] Transform playerTrm;
     [SerializeField] LayerMask targetLine;
 
+    HPBarManager hpBarManager;
     Transform bulletParent;
     Animator anim;
     bool isBulletSpawned;
 
     void Start()
     {
+        hpBarManager = FindObjectOfType<HPBarManager>();
+        hpBarManager.SetupHPBar(transform);
         anim = GetComponent<Animator>();
         bulletParent = new GameObject("Bullet").transform;
         isBulletSpawned = false;
     }
+    private void OnDestroy()
+    {
+        hpBarManager.RemoveHPBar(transform);
+    }
 
     void Update()
+    {
+        CheckRay();
+    }
+
+    private void CheckRay()
     {
         RaycastHit hit;
         float maxDistance = 20f;
