@@ -9,11 +9,12 @@ public enum DinoType
 
 public class Dinosaur : MonoBehaviour
 {
-    [SerializeField] DinoType dinoType;
-    [SerializeField] Transform dinoTransform;
     float moveSpeed = .5f;
     Animator anim;
     Coroutine moveCoroutine;
+    [SerializeField] DinoType dinoType;
+    [SerializeField] Transform dinoTransform;
+    [SerializeField] LayerMask chicken;
 
     void Start()
     {
@@ -24,14 +25,18 @@ public class Dinosaur : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        float distance = 1f;
+        float distance = 0.7f;
 
-        /*if (Physics.Raycast(dinoTransform.position, dinoTransform.forward, out hit, distance))
+        if (Physics.Raycast(dinoTransform.position, dinoTransform.forward, out hit, distance, chicken))
         {
-            if (hit.collider.CompareTag("Dino"))
+            if (hit.collider.CompareTag("Dealer") || hit.collider.CompareTag("Healer") || hit.collider.CompareTag("Tanker"))
             {
+                if (moveCoroutine != null)
+                {
+                    StopCoroutine(moveCoroutine);
+                }
             }
-        }*/
+        }
 
         Debug.DrawRay(dinoTransform.position, dinoTransform.forward * distance, Color.red);
     }

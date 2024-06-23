@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6923206421518627927}
   - component: {fileID: 1904019781015573411}
   - component: {fileID: 7298378858236832917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wing_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 4523982008832361857}
   - component: {fileID: 654924442214818096}
   - component: {fileID: 1231681989422302608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chicken_Tanker
   m_TagString: Tanker
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 4618157994628813578}
   - component: {fileID: 4813523342948593683}
   - component: {fileID: 6417837104420165564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeadDecor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 1575540525937138731}
   - component: {fileID: 668722695974498411}
   - component: {fileID: 4962990505061195618}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeadDecor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 1018124125287260356}
   - component: {fileID: 2073230957925329365}
   - component: {fileID: 7390254461524246482}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg_R_middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 184005423927214156}
   - component: {fileID: 6249196543908113196}
   - component: {fileID: 5503630337599341633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 538447714090979570}
   - component: {fileID: 6572391401983354909}
   - component: {fileID: 4048188510311423479}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wing_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2409248262368502654}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 7069405739519266701}
   - component: {fileID: 3271412090709625964}
   - component: {fileID: 150813387912357650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PupilR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,7 +846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7614306570052188796}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 7725871393996715413}
   - component: {fileID: 6863972899524571955}
   - component: {fileID: 7857580885655651846}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PupilL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 4381838456786822805}
   - component: {fileID: 1943976735431874549}
   - component: {fileID: 5211884412520532691}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EyeballR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 2996366229414529662}
   - component: {fileID: 3674796380358417607}
   - component: {fileID: 714755422418174012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg_L_middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 4787142843448892488}
   - component: {fileID: 6649449881848476749}
   - component: {fileID: 6289557922139707494}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EyeballL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1285,7 +1285,7 @@ GameObject:
   - component: {fileID: 2642829177476390713}
   - component: {fileID: 8830068303613748742}
   - component: {fileID: 7929784966326548166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1389,7 +1389,7 @@ GameObject:
   - component: {fileID: 2135865706547127655}
   - component: {fileID: 8530718280591008881}
   - component: {fileID: 2658233794634542443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1473,7 +1473,7 @@ GameObject:
   - component: {fileID: 6594155042159209231}
   - component: {fileID: 675967284666539327}
   - component: {fileID: 4052286194383605897}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1578,7 +1578,7 @@ GameObject:
   - component: {fileID: 3362511743648493565}
   - component: {fileID: 3272024947772312985}
   - component: {fileID: 6498489079628663132}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1680,7 +1680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4755070016702821266}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,7 +1716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4046087769170744108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,7 +1752,7 @@ GameObject:
   - component: {fileID: 1000293382559500335}
   - component: {fileID: 8205517230156909089}
   - component: {fileID: 3906838124753220874}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeadDecor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1856,7 +1856,7 @@ GameObject:
   - component: {fileID: 6703935225257665007}
   - component: {fileID: 292916885896455622}
   - component: {fileID: 19003291975906266}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg_L_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1938,7 +1938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4197642688577319601}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BaseAnimal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1971,7 +1971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2648978952137937217}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2010,7 +2010,7 @@ GameObject:
   - component: {fileID: 1378371253066325605}
   - component: {fileID: 1281333190830633681}
   - component: {fileID: 1908976907486014142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2115,7 +2115,7 @@ GameObject:
   - component: {fileID: 2176291528208761936}
   - component: {fileID: 3957841196530005816}
   - component: {fileID: 5174483561036519439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeadDecor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2219,7 +2219,7 @@ GameObject:
   - component: {fileID: 7447195371142591681}
   - component: {fileID: 7978810956860806642}
   - component: {fileID: 350019511646875010}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg_R_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2303,7 +2303,7 @@ GameObject:
   - component: {fileID: 7081635072038423935}
   - component: {fileID: 8579028293972943388}
   - component: {fileID: 5114267955232611726}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2387,7 +2387,7 @@ GameObject:
   - component: {fileID: 4540979925899492914}
   - component: {fileID: 921585905050350935}
   - component: {fileID: 7889369029935661670}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2492,7 +2492,7 @@ GameObject:
   - component: {fileID: 736344187511940839}
   - component: {fileID: 7726650877908431460}
   - component: {fileID: 8892982522912935016}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Beak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2599,6 +2599,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorinthianHelmet_Rustic
       objectReference: {fileID: 0}
+    - target: {fileID: 143074402402824467, guid: f440c1e22e434b4438e44dac256a5b9e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 772259333388610473, guid: f440c1e22e434b4438e44dac256a5b9e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2698,6 +2703,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LODs.Array.data[2].renderers.Array.data[0].renderer
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947806272397489890, guid: f440c1e22e434b4438e44dac256a5b9e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7837997475632518999, guid: f440c1e22e434b4438e44dac256a5b9e,
         type: 3}

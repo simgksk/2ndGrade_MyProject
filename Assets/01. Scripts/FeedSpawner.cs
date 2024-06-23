@@ -29,8 +29,4 @@ public class FeedSpawner : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
 }
