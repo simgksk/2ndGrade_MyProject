@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Healer : MonoBehaviour
+public class Supporter : MonoBehaviour
 {
     [SerializeField] GameObject feedPrefab;
     [SerializeField] Transform feedPos;

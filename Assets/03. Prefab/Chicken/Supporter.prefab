@@ -1323,8 +1323,8 @@ GameObject:
   - component: {fileID: 4309858390562675993}
   - component: {fileID: 359860501703969035}
   m_Layer: 7
-  m_Name: Chicken_Healer
-  m_TagString: Healer
+  m_Name: Supporter
+  m_TagString: Supporter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

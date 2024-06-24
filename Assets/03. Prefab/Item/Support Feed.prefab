@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 6341048690293428098}
   - component: {fileID: 1386062786377108760}
   m_Layer: 0
-  m_Name: Healer Feed
+  m_Name: Support Feed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

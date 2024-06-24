@@ -44,7 +44,7 @@ public class Dinosaur : MonoBehaviour
 
         if (Physics.Raycast(dinoTransform.position, dinoTransform.forward, out hit, distance, chicken))
         {
-            if (hit.collider.CompareTag("Dealer") || hit.collider.CompareTag("Healer") || hit.collider.CompareTag("Tanker"))
+            if (hit.collider.CompareTag("Dealer") || hit.collider.CompareTag("Supporter") || hit.collider.CompareTag("Tanker"))
             {
                 if (moveCoroutine != null)
                 {

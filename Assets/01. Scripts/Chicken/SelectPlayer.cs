@@ -16,21 +16,21 @@ public class SelectPlayer : MonoBehaviour
 
     [Header("Border")]
     [SerializeField] GameObject dealer_border;
-    [SerializeField] GameObject healer_border;
+    [SerializeField] GameObject supporter_border;
     [SerializeField] GameObject tanker_border;
 
     [Header("Effect")]
     [SerializeField] GameObject floatingImagePrefab;
-    [SerializeField] GameObject dealer_NeedFeedImage;
+    [SerializeField] GameObject supporter_NeedFeedImage;
     [SerializeField] GameObject healer_NeedFeedImage;
     [SerializeField] GameObject tanker_NeedFeedImage;
     [SerializeField] Transform dealerUI;
-    [SerializeField] Transform healerUI;
+    [SerializeField] Transform supporterUI;
     [SerializeField] Transform tankerUI;
     
     [Header("PlayerPrefab")]
     [SerializeField] GameObject dealerPrefab;
-    [SerializeField] GameObject healerPrefab;
+    [SerializeField] GameObject supporterPrefab;
     [SerializeField] GameObject tankerPrefab;
 
     [Header("Layer Mask")]
@@ -39,7 +39,7 @@ public class SelectPlayer : MonoBehaviour
     static SelectPlayer currentSelectedPlayer;
 
     int dealerFeed = 100;
-    int healerFeed = 50;
+    int supporterFeed = 50;
     int tankerFeed = 150;
 
     float lastInstallationTime = -7f;
@@ -48,10 +48,10 @@ public class SelectPlayer : MonoBehaviour
     void Start()
     {
         dealer_border.SetActive(false); 
-        healer_border.SetActive(false); 
+        supporter_border.SetActive(false); 
         tanker_border.SetActive(false);
 
-        dealer_NeedFeedImage.SetActive(false);
+        supporter_NeedFeedImage.SetActive(false);
         healer_NeedFeedImage.SetActive(false);
         tanker_NeedFeedImage.SetActive(false);
     }
@@ -99,12 +99,12 @@ public class SelectPlayer : MonoBehaviour
                             break;
 
                         case PlayerType.healer:
-                            if (GameManager.instance.currentFeed >= healerFeed)
+                            if (GameManager.instance.currentFeed >= supporterFeed)
                             {
-                                newObj = Instantiate(healerPrefab);
+                                newObj = Instantiate(supporterPrefab);
                                 newObj.transform.position = cellCenter;
-                                GameManager.instance.SubFeedCnt(healerFeed);
-                                AddFloatingImage(healerUI.transform);
+                                GameManager.instance.SubFeedCnt(supporterFeed);
+                                AddFloatingImage(supporterUI.transform);
                                 OnCharacterClicked();
                             }
                             break;
@@ -134,15 +134,15 @@ public class SelectPlayer : MonoBehaviour
     }
     void UpdateFeedStatus()
     {
-        dealer_NeedFeedImage.SetActive(GameManager.instance.currentFeed < dealerFeed);
-        healer_NeedFeedImage.SetActive(GameManager.instance.currentFeed < healerFeed);
+        supporter_NeedFeedImage.SetActive(GameManager.instance.currentFeed < dealerFeed);
+        healer_NeedFeedImage.SetActive(GameManager.instance.currentFeed < supporterFeed);
         tanker_NeedFeedImage.SetActive(GameManager.instance.currentFeed < tankerFeed);
 
         if (GameManager.instance.currentFeed < dealerFeed && currentSelectedPlayer?.playerType == PlayerType.dealer)
         {
             currentSelectedPlayer.Deselect();
         }
-        if (GameManager.instance.currentFeed < healerFeed && currentSelectedPlayer?.playerType == PlayerType.healer)
+        if (GameManager.instance.currentFeed < supporterFeed && currentSelectedPlayer?.playerType == PlayerType.healer)
         {
             currentSelectedPlayer.Deselect();
         }
@@ -212,19 +212,19 @@ public class SelectPlayer : MonoBehaviour
         {
             case PlayerType.dealer:
                 dealer_border.SetActive(true);
-                healer_border.SetActive(false);
+                supporter_border.SetActive(false);
                 tanker_border.SetActive(false);
                 break;
 
             case PlayerType.healer:
                 dealer_border.SetActive(false);
-                healer_border.SetActive(true);
+                supporter_border.SetActive(true);
                 tanker_border.SetActive(false);
                 break;
 
             case PlayerType.tanker:
                 dealer_border.SetActive(false);
-                healer_border.SetActive(false);
+                supporter_border.SetActive(false);
                 tanker_border.SetActive(true);
                 break;
         }
@@ -241,7 +241,7 @@ public class SelectPlayer : MonoBehaviour
                     currentSelectedPlayer.dealer_border.SetActive(false);
                     break;
                 case PlayerType.healer:
-                    currentSelectedPlayer.healer_border.SetActive(false);
+                    currentSelectedPlayer.supporter_border.SetActive(false);
                     break;
                 case PlayerType.tanker:
                     currentSelectedPlayer.tanker_border.SetActive(false);
