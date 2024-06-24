@@ -111,3 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dinoType: 0
+  dinoTransform: {fileID: 0}
+  chicken:
+    serializedVersion: 2
+    m_Bits: 128
