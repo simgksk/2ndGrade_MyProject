@@ -3432,18 +3432,6 @@ PrefabInstance:
       value: sidewalk01 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 450434, guid: 7e8af7d32dc160948963d4f0910c56a1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.5062096
-      objectReference: {fileID: 0}
-    - target: {fileID: 450434, guid: 7e8af7d32dc160948963d4f0910c56a1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 450434, guid: 7e8af7d32dc160948963d4f0910c56a1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.2702713
-      objectReference: {fileID: 0}
-    - target: {fileID: 450434, guid: 7e8af7d32dc160948963d4f0910c56a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.55
       objectReference: {fileID: 0}

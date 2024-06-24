@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 654924442214818096}
   - component: {fileID: 1231681989422302608}
   - component: {fileID: 3327335766633767964}
+  - component: {fileID: -3375030193657191109}
   m_Layer: 7
   m_Name: Chicken_Tanker
   m_TagString: Tanker
@@ -213,6 +214,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3375030193657191109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752020975371630323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce93190e48c4ebb4b930fe1711578348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &757252742084262408
 GameObject:
   m_ObjectHideFlags: 0
