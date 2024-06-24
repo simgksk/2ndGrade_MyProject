@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -541,11 +541,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: floor_Yellow (20)
       objectReference: {fileID: 0}
-    - target: {fileID: 6208814896624136130, guid: 3b23fb47e155ac54892104663bf26e05,
-        type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8909412009207759126, guid: 3b23fb47e155ac54892104663bf26e05,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -611,8 +606,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1103,7 +1097,7 @@ GameObject:
   - component: {fileID: 169219412}
   - component: {fileID: 169219411}
   m_Layer: 5
-  m_Name: Healer_Img
+  m_Name: Supporter_Img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1182,19 +1176,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 1
   dealer_border: {fileID: 359697328}
-  healer_border: {fileID: 576872928}
+  supporter_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
   floatingImagePrefab: {fileID: 6641923011902530847, guid: 3d47dcebe38bd334abd55e0d129f45bc,
     type: 3}
   dealer_NeedFeedImage: {fileID: 5978800924453020307}
-  healer_NeedFeedImage: {fileID: 392882807}
+  supporter_NeedFeedImage: {fileID: 392882807}
   tanker_NeedFeedImage: {fileID: 833007620}
   dealerUI: {fileID: 1570750243}
-  healerUI: {fileID: 169219407}
+  supporterUI: {fileID: 1570750243}
   tankerUI: {fileID: 1600769582}
   dealerPrefab: {fileID: 3458393484612299291, guid: 8f0ea853b712d8d46a6210d1116d02e2,
     type: 3}
-  healerPrefab: {fileID: 5384648026454396403, guid: eaf433cb511e0024e8d5df27f884381b,
+  supporterPrefab: {fileID: 5384648026454396403, guid: eaf433cb511e0024e8d5df27f884381b,
     type: 3}
   tankerPrefab: {fileID: 752020975371630323, guid: 3ad5a457e43f37c41ae9949cd639e0e8,
     type: 3}
@@ -1567,6 +1561,37 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246656508}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &246992785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246992786}
+  m_Layer: 0
+  m_Name: ---------------------------------------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246992786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246992785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -4540,26 +4565,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: floor_Brown (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 2601263592757044922, guid: 1cda433f56e5f024686285aa8c2829b5,
-        type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9219145119860687722, guid: 1cda433f56e5f024686285aa8c2829b5,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9219145119860687722, guid: 1cda433f56e5f024686285aa8c2829b5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9219145119860687722, guid: 1cda433f56e5f024686285aa8c2829b5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9219145119860687722, guid: 1cda433f56e5f024686285aa8c2829b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4610,8 +4615,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7164,19 +7168,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 0
   dealer_border: {fileID: 359697328}
-  healer_border: {fileID: 576872928}
+  supporter_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
   floatingImagePrefab: {fileID: 6641923011902530847, guid: 3d47dcebe38bd334abd55e0d129f45bc,
     type: 3}
   dealer_NeedFeedImage: {fileID: 5978800924453020307}
-  healer_NeedFeedImage: {fileID: 392882807}
+  supporter_NeedFeedImage: {fileID: 392882807}
   tanker_NeedFeedImage: {fileID: 833007620}
   dealerUI: {fileID: 1570750243}
-  healerUI: {fileID: 169219407}
+  supporterUI: {fileID: 1570750243}
   tankerUI: {fileID: 1600769582}
   dealerPrefab: {fileID: 3458393484612299291, guid: 8f0ea853b712d8d46a6210d1116d02e2,
     type: 3}
-  healerPrefab: {fileID: 5384648026454396403, guid: eaf433cb511e0024e8d5df27f884381b,
+  supporterPrefab: {fileID: 5384648026454396403, guid: eaf433cb511e0024e8d5df27f884381b,
     type: 3}
   tankerPrefab: {fileID: 752020975371630323, guid: 3ad5a457e43f37c41ae9949cd639e0e8,
     type: 3}
@@ -7344,19 +7348,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 2
   dealer_border: {fileID: 359697328}
-  healer_border: {fileID: 576872928}
+  supporter_border: {fileID: 576872928}
   tanker_border: {fileID: 1755840288}
   floatingImagePrefab: {fileID: 6641923011902530847, guid: 3d47dcebe38bd334abd55e0d129f45bc,
     type: 3}
   dealer_NeedFeedImage: {fileID: 5978800924453020307}
-  healer_NeedFeedImage: {fileID: 392882807}
+  supporter_NeedFeedImage: {fileID: 392882807}
   tanker_NeedFeedImage: {fileID: 833007620}
   dealerUI: {fileID: 1570750243}
-  healerUI: {fileID: 169219407}
+  supporterUI: {fileID: 1570750243}
   tankerUI: {fileID: 1600769582}
   dealerPrefab: {fileID: 3458393484612299291, guid: 8f0ea853b712d8d46a6210d1116d02e2,
     type: 3}
-  healerPrefab: {fileID: 5384648026454396403, guid: eaf433cb511e0024e8d5df27f884381b,
+  supporterPrefab: {fileID: 5384648026454396403, guid: eaf433cb511e0024e8d5df27f884381b,
     type: 3}
   tankerPrefab: {fileID: 752020975371630323, guid: 3ad5a457e43f37c41ae9949cd639e0e8,
     type: 3}
@@ -10050,3 +10054,4 @@ SceneRoots:
   - {fileID: 1469873947}
   - {fileID: 268793131}
   - {fileID: 1422587698}
+  - {fileID: 246992786}

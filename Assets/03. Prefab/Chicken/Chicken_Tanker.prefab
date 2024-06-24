@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 4523982008832361857}
   - component: {fileID: 654924442214818096}
   - component: {fileID: 1231681989422302608}
+  - component: {fileID: 3327335766633767964}
   m_Layer: 7
   m_Name: Chicken_Tanker
   m_TagString: Tanker
@@ -191,6 +192,27 @@ CapsuleCollider:
   m_Height: 0.84500396
   m_Direction: 1
   m_Center: {x: -0.008347908, y: 0.40828252, z: 0.17381454}
+--- !u!95 &3327335766633767964
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752020975371630323}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e0e02f33a140ad4a97384a3d7294c5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &757252742084262408
 GameObject:
   m_ObjectHideFlags: 0

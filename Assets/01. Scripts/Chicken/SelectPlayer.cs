@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public enum PlayerType
 {
     dealer,
-    healer,
+    supporter,
     tanker
 }
 public class SelectPlayer : MonoBehaviour
@@ -21,8 +21,8 @@ public class SelectPlayer : MonoBehaviour
 
     [Header("Effect")]
     [SerializeField] GameObject floatingImagePrefab;
+    [SerializeField] GameObject dealer_NeedFeedImage;
     [SerializeField] GameObject supporter_NeedFeedImage;
-    [SerializeField] GameObject healer_NeedFeedImage;
     [SerializeField] GameObject tanker_NeedFeedImage;
     [SerializeField] Transform dealerUI;
     [SerializeField] Transform supporterUI;
@@ -51,8 +51,8 @@ public class SelectPlayer : MonoBehaviour
         supporter_border.SetActive(false); 
         tanker_border.SetActive(false);
 
+        dealer_NeedFeedImage.SetActive(false);
         supporter_NeedFeedImage.SetActive(false);
-        healer_NeedFeedImage.SetActive(false);
         tanker_NeedFeedImage.SetActive(false);
     }
     private void Update()
@@ -98,7 +98,7 @@ public class SelectPlayer : MonoBehaviour
                             }
                             break;
 
-                        case PlayerType.healer:
+                        case PlayerType.supporter:
                             if (GameManager.instance.currentFeed >= supporterFeed)
                             {
                                 newObj = Instantiate(supporterPrefab);
@@ -134,15 +134,15 @@ public class SelectPlayer : MonoBehaviour
     }
     void UpdateFeedStatus()
     {
-        supporter_NeedFeedImage.SetActive(GameManager.instance.currentFeed < dealerFeed);
-        healer_NeedFeedImage.SetActive(GameManager.instance.currentFeed < supporterFeed);
+        dealer_NeedFeedImage.SetActive(GameManager.instance.currentFeed < dealerFeed);
+        supporter_NeedFeedImage.SetActive(GameManager.instance.currentFeed < supporterFeed);
         tanker_NeedFeedImage.SetActive(GameManager.instance.currentFeed < tankerFeed);
 
         if (GameManager.instance.currentFeed < dealerFeed && currentSelectedPlayer?.playerType == PlayerType.dealer)
         {
             currentSelectedPlayer.Deselect();
         }
-        if (GameManager.instance.currentFeed < supporterFeed && currentSelectedPlayer?.playerType == PlayerType.healer)
+        if (GameManager.instance.currentFeed < supporterFeed && currentSelectedPlayer?.playerType == PlayerType.supporter)
         {
             currentSelectedPlayer.Deselect();
         }
@@ -216,7 +216,7 @@ public class SelectPlayer : MonoBehaviour
                 tanker_border.SetActive(false);
                 break;
 
-            case PlayerType.healer:
+            case PlayerType.supporter:
                 dealer_border.SetActive(false);
                 supporter_border.SetActive(true);
                 tanker_border.SetActive(false);
@@ -240,7 +240,7 @@ public class SelectPlayer : MonoBehaviour
                 case PlayerType.dealer:
                     currentSelectedPlayer.dealer_border.SetActive(false);
                     break;
-                case PlayerType.healer:
+                case PlayerType.supporter:
                     currentSelectedPlayer.supporter_border.SetActive(false);
                     break;
                 case PlayerType.tanker:
