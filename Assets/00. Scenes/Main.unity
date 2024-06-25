@@ -1184,7 +1184,7 @@ MonoBehaviour:
   supporter_NeedFeedImage: {fileID: 392882807}
   tanker_NeedFeedImage: {fileID: 833007620}
   dealerUI: {fileID: 1570750243}
-  supporterUI: {fileID: 1570750243}
+  supporterUI: {fileID: 169219407}
   tankerUI: {fileID: 1600769582}
   dealerPrefab: {fileID: 3458393484612299291, guid: 8f0ea853b712d8d46a6210d1116d02e2,
     type: 3}
@@ -3621,8 +3621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dinoPrefabs:
-  - {fileID: 3597630545634646944, guid: 5b92bd901605ecf4f864bc680d9f2a76, type: 3}
-  - {fileID: 5370476360481279603, guid: 43d45d661efae7f4bab282ef6b5c2878, type: 3}
+  - {fileID: 3577967548355392575, guid: cff2f827e1db5a74bb5757732da8bf01, type: 3}
 --- !u!4 &674365235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4124885585189055441, guid: 49c5849ccb82950459a76f30e8a87841,
@@ -7115,7 +7114,7 @@ MonoBehaviour:
   supporter_NeedFeedImage: {fileID: 392882807}
   tanker_NeedFeedImage: {fileID: 833007620}
   dealerUI: {fileID: 1570750243}
-  supporterUI: {fileID: 1570750243}
+  supporterUI: {fileID: 169219407}
   tankerUI: {fileID: 1600769582}
   dealerPrefab: {fileID: 3458393484612299291, guid: 8f0ea853b712d8d46a6210d1116d02e2,
     type: 3}
@@ -7295,7 +7294,7 @@ MonoBehaviour:
   supporter_NeedFeedImage: {fileID: 392882807}
   tanker_NeedFeedImage: {fileID: 833007620}
   dealerUI: {fileID: 1570750243}
-  supporterUI: {fileID: 1570750243}
+  supporterUI: {fileID: 169219407}
   tankerUI: {fileID: 1600769582}
   dealerPrefab: {fileID: 3458393484612299291, guid: 8f0ea853b712d8d46a6210d1116d02e2,
     type: 3}

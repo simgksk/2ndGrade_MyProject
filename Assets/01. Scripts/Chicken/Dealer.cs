@@ -16,7 +16,7 @@ public class Dealer : MonoBehaviour
     Animator anim;
 
     bool isBulletSpawned;
-    float damage = 1f;
+    float damage = 2f;
 
     void Start()
     {
@@ -78,7 +78,7 @@ public class Dealer : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("DinoMouse"))
+        if (other.gameObject.CompareTag("Dino"))
         {
             hpBar.Damage(damage);
             if (hpBar.currentHP <= 0)

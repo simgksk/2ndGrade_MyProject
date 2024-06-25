@@ -7,7 +7,7 @@ public class ChickenFeed : MonoBehaviour
 {
     float fallSpeed = 1f;
     bool isFloor = false;
-    int feedCnt = 25;
+    int feedCnt = 35;
     void Start()
     {
         

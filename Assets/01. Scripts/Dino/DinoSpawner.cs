@@ -20,7 +20,7 @@ public class DinoSpawner : MonoBehaviour
     {
         while (true)
         {
-            float rdSpawnTime = Random.Range(5f, 15f);
+            float rdSpawnTime = Random.Range(5f, 7f);
             yield return new WaitForSeconds(rdSpawnTime);
 
             int rdIndex = Random.Range(0, dinoPrefabs.Length);
@@ -30,7 +30,7 @@ public class DinoSpawner : MonoBehaviour
 
             if (childTransform.childCount == 0)
             {
-                GameObject spawnedDino = Instantiate(selectedPrefab, childTransform.position, childTransform.rotation);
+                GameObject spawnedDino = Instantiate(selectedPrefab, childTransform.position, Quaternion.Euler(0, -90, 0));
                 spawnedDino.transform.SetParent(childTransform);
             }
         }

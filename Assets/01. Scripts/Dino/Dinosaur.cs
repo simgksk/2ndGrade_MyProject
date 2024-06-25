@@ -3,8 +3,7 @@ using UnityEngine;
 
 public enum DinoType
 {
-    mofletitos,
-    stegosaurus
+    metaDino
 }
 
 public class Dinosaur : MonoBehaviour
@@ -21,7 +20,7 @@ public class Dinosaur : MonoBehaviour
     HPBarManager hpBarManager;
     HPbar hpBar;
 
-    float damage = 5f;
+    float damage = 7f;
     float attackTime = 3f;
     float stopTime = 3f;
 
@@ -93,14 +92,11 @@ public class Dinosaur : MonoBehaviour
 
             switch (dinoType)
             {
-                case DinoType.mofletitos:
-                    anim.SetBool("isDie", true);
-                    break;
-                case DinoType.stegosaurus:
-                    anim.SetBool("isDie1", true);
+                case DinoType.metaDino:
+                    anim.SetBool("MetaDino_isDie", true);
                     break;
             }
-            Destroy(gameObject, 1.5f);
+            Destroy(gameObject, 2f);
         }
 
         if (other.gameObject.CompareTag("Bullet"))
@@ -133,11 +129,8 @@ public class Dinosaur : MonoBehaviour
             {
                 switch (dinoType)
                 {
-                    case DinoType.mofletitos:
-                        anim.SetBool("isStop", false);
-                        break;
-                    case DinoType.stegosaurus:
-                        anim.SetBool("isStop1", false);
+                    case DinoType.metaDino:
+                        anim.SetBool("MetaDino_isWalking", true);
                         break;
                 }
 
@@ -148,11 +141,8 @@ public class Dinosaur : MonoBehaviour
 
             switch (dinoType)
             {
-                case DinoType.mofletitos:
-                    anim.SetBool("isStop", true);
-                    break;
-                case DinoType.stegosaurus:
-                    anim.SetBool("isStop1", true);
+                case DinoType.metaDino:
+                    anim.SetBool("MetaDino_isWalking", false);
                     break;
             }
 
@@ -166,11 +156,9 @@ public class Dinosaur : MonoBehaviour
         {
             switch (dinoType)
             {
-                case DinoType.mofletitos:
-                    anim.SetBool("isAttack", true);
-                    break;
-                case DinoType.stegosaurus:
-                    //anim.SetBool("isAttack", true);
+                case DinoType.metaDino:
+                    anim.SetBool("MetaDino_isAttack", true);
+                    Debug.Log("attack");
                     break;
             }
 
@@ -178,13 +166,9 @@ public class Dinosaur : MonoBehaviour
 
             switch (dinoType)
             {
-                case DinoType.mofletitos:
-                    anim.SetBool("isAttack", false);
-                    anim.SetBool("isStop", true);
-                    break;
-                case DinoType.stegosaurus:
-                    //anim.SetBool("isAttack", false);
-                    anim.SetBool("isStop1", true);
+                case DinoType.metaDino:
+                    anim.SetBool("MetaDino_isAttack", false);
+                    Debug.Log("stop");
                     break;
             }
 
@@ -192,11 +176,9 @@ public class Dinosaur : MonoBehaviour
 
             switch (dinoType)
             {
-                case DinoType.mofletitos:
-                    anim.SetBool("isStop", false);
-                    break;
-                case DinoType.stegosaurus:
-                    anim.SetBool("isStop1", false);
+                case DinoType.metaDino:
+                    anim.SetBool("MetaDino_isAttack", true);
+                    Debug.Log("attack");
                     break;
             }
         }
